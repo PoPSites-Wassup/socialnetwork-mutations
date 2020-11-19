@@ -6,13 +6,13 @@ namespace PoPSitesWassup\SocialNetworkMutations\MutationResolverBridges;
 
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoPSchema\CustomPosts\Facades\CustomPostTypeAPIFacade;
-use PoPSitesWassup\SocialNetworkMutations\MutationResolvers\UnrecommendPostMutationResolver;
+use PoPSitesWassup\SocialNetworkMutations\MutationResolvers\UpvoteCustomPostMutationResolver;
 
-class UnrecommendPostMutationResolverBridge extends AbstractPostUpdateUserMetaValueMutationResolverBridge
+class UpvoteCustomPostMutationResolverBridge extends AbstractCustomPostUpdateUserMetaValueMutationResolverBridge
 {
     public function getMutationResolverClass(): string
     {
-        return UnrecommendPostMutationResolver::class;
+        return UpvoteCustomPostMutationResolver::class;
     }
 
     protected function onlyExecuteWhenDoingPost(): bool
@@ -27,7 +27,7 @@ class UnrecommendPostMutationResolverBridge extends AbstractPostUpdateUserMetaVa
     {
         $customPostTypeAPI = CustomPostTypeAPIFacade::getInstance();
         return sprintf(
-            TranslationAPIFacade::getInstance()->__('You have stopped recommending <em><strong>%s</strong></em>.', 'pop-coreprocessors'),
+            TranslationAPIFacade::getInstance()->__('You have up-voted <em><strong>%s</strong></em>.', 'pop-coreprocessors'),
             $customPostTypeAPI->getTitle($result_id)
         );
     }

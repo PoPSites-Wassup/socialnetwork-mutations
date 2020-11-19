@@ -8,7 +8,7 @@ use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\Hooks\Facades\HooksAPIFacade;
 use PoPSchema\CustomPosts\Facades\CustomPostTypeAPIFacade;
 
-class AbstractPostUpdateUserMetaValueMutationResolver extends AbstractUpdateUserMetaValueMutationResolver
+class AbstractCustomPostUpdateUserMetaValueMutationResolver extends AbstractUpdateUserMetaValueMutationResolver
 {
     protected function eligible($post)
     {

@@ -6,13 +6,13 @@ namespace PoPSitesWassup\SocialNetworkMutations\MutationResolverBridges;
 
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoPSchema\CustomPosts\Facades\CustomPostTypeAPIFacade;
-use PoPSitesWassup\SocialNetworkMutations\MutationResolvers\UndoUpvotePostMutationResolver;
+use PoPSitesWassup\SocialNetworkMutations\MutationResolvers\UndoUpvoteCustomPostMutationResolver;
 
-class UndoUpvotePostMutationResolverBridge extends AbstractPostUpdateUserMetaValueMutationResolverBridge
+class UndoUpvoteCustomPostMutationResolverBridge extends AbstractCustomPostUpdateUserMetaValueMutationResolverBridge
 {
     public function getMutationResolverClass(): string
     {
-        return UndoUpvotePostMutationResolver::class;
+        return UndoUpvoteCustomPostMutationResolver::class;
     }
 
     protected function onlyExecuteWhenDoingPost(): bool

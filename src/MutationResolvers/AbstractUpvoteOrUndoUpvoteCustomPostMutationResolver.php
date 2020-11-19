@@ -7,7 +7,7 @@ namespace PoPSitesWassup\SocialNetworkMutations\MutationResolvers;
 use PoP\Hooks\Facades\HooksAPIFacade;
 use PoPSchema\CustomPosts\Facades\CustomPostTypeAPIFacade;
 
-abstract class AbstractUpvoteOrUndoUpvotePostMutationResolver extends AbstractPostUpdateUserMetaValueMutationResolver
+abstract class AbstractUpvoteOrUndoUpvoteCustomPostMutationResolver extends AbstractCustomPostUpdateUserMetaValueMutationResolver
 {
     protected function eligible($post)
     {

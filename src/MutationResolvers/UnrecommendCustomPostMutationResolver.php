@@ -9,7 +9,7 @@ use PoP\Hooks\Facades\HooksAPIFacade;
 use PoPSchema\CustomPosts\Facades\CustomPostTypeAPIFacade;
 use PoP\ComponentModel\State\ApplicationState;
 
-class UnrecommendPostMutationResolver extends AbstractRecommendOrUnrecommendPostMutationResolver
+class UnrecommendCustomPostMutationResolver extends AbstractRecommendOrUnrecommendCustomPostMutationResolver
 {
     public function validateErrors(array $form_data): ?array
     {
