@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace PoPSitesWassup\SocialNetworkMutations\MutationResolverBridges;
 
-use Symfony\Contracts\Service\Attribute\Required;
 use PoP\ComponentModel\MutationResolvers\MutationResolverInterface;
 use PoPSitesWassup\SocialNetworkMutations\MutationResolvers\FollowUserMutationResolver;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class FollowUserMutationResolverBridge extends AbstractUserUpdateUserMetaValueMutationResolverBridge
 {
     protected FollowUserMutationResolver $followUserMutationResolver;
 
     #[Required]
-    public function autowireFollowUserMutationResolverBridge(
+    final public function autowireFollowUserMutationResolverBridge(
         FollowUserMutationResolver $followUserMutationResolver,
     ): void {
         $this->followUserMutationResolver = $followUserMutationResolver;

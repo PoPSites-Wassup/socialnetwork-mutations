@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace PoPSitesWassup\SocialNetworkMutations\MutationResolverBridges;
 
-use Symfony\Contracts\Service\Attribute\Required;
 use PoP\ComponentModel\MutationResolvers\MutationResolverInterface;
 use PoPSitesWassup\SocialNetworkMutations\MutationResolvers\DownvoteCustomPostMutationResolver;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class DownvoteCustomPostMutationResolverBridge extends AbstractCustomPostUpdateUserMetaValueMutationResolverBridge
 {
     protected DownvoteCustomPostMutationResolver $downvoteCustomPostMutationResolver;
 
     #[Required]
-    public function autowireDownvoteCustomPostMutationResolverBridge(
+    final public function autowireDownvoteCustomPostMutationResolverBridge(
         DownvoteCustomPostMutationResolver $downvoteCustomPostMutationResolver,
     ): void {
         $this->downvoteCustomPostMutationResolver = $downvoteCustomPostMutationResolver;

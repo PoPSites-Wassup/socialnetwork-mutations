@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace PoPSitesWassup\SocialNetworkMutations\MutationResolvers;
 
-use Symfony\Contracts\Service\Attribute\Required;
 use PoP\ComponentModel\State\ApplicationState;
 use PoPSchema\UserMeta\Utils;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class UpvoteCustomPostMutationResolver extends AbstractUpvoteOrUndoUpvoteCustomPostMutationResolver
 {
     protected DownvoteCustomPostMutationResolver $downvoteCustomPostMutationResolver;
 
     #[Required]
-    public function autowireUpvoteCustomPostMutationResolver(
+    final public function autowireUpvoteCustomPostMutationResolver(
         DownvoteCustomPostMutationResolver $downvoteCustomPostMutationResolver,
     ): void {
         $this->downvoteCustomPostMutationResolver = $downvoteCustomPostMutationResolver;

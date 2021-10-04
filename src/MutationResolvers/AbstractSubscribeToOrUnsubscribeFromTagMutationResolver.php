@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace PoPSitesWassup\SocialNetworkMutations\MutationResolvers;
 
-use Symfony\Contracts\Service\Attribute\Required;
 use PoPSchema\PostTags\TypeAPIs\PostTagTypeAPIInterface;
+use Symfony\Contracts\Service\Attribute\Required;
 
 abstract class AbstractSubscribeToOrUnsubscribeFromTagMutationResolver extends AbstractUpdateUserMetaValueMutationResolver
 {
     protected PostTagTypeAPIInterface $postTagTypeAPI;
 
     #[Required]
-    public function autowireAbstractSubscribeToOrUnsubscribeFromTagMutationResolver(
+    final public function autowireAbstractSubscribeToOrUnsubscribeFromTagMutationResolver(
         PostTagTypeAPIInterface $postTagTypeAPI,
     ): void {
         $this->postTagTypeAPI = $postTagTypeAPI;

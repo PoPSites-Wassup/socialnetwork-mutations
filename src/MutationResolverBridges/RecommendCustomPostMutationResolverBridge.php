@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace PoPSitesWassup\SocialNetworkMutations\MutationResolverBridges;
 
-use Symfony\Contracts\Service\Attribute\Required;
 use PoP\ComponentModel\MutationResolvers\MutationResolverInterface;
 use PoPSitesWassup\SocialNetworkMutations\MutationResolvers\RecommendCustomPostMutationResolver;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class RecommendCustomPostMutationResolverBridge extends AbstractCustomPostUpdateUserMetaValueMutationResolverBridge
 {
     protected RecommendCustomPostMutationResolver $recommendCustomPostMutationResolver;
 
     #[Required]
-    public function autowireRecommendCustomPostMutationResolverBridge(
+    final public function autowireRecommendCustomPostMutationResolverBridge(
         RecommendCustomPostMutationResolver $recommendCustomPostMutationResolver,
     ): void {
         $this->recommendCustomPostMutationResolver = $recommendCustomPostMutationResolver;
